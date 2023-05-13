@@ -2,7 +2,9 @@ certifi==2023.5.7
 charset-normalizer==3.1.0
 configparser==5.3.0
 DateTime==5.1
+future==0.18.3
 idna==3.4
+python-whois==0.8.0
 pytz==2023.3
 requests==2.30.0
 urllib3==2.0.2
