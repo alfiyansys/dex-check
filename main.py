@@ -29,7 +29,6 @@ for domain in tld_domains:
     try:
         domain_info = whois.whois(domain_name)
     except Exception as e:
-        print(e)
         traceback.print_exc()
         continue
     
@@ -42,7 +41,7 @@ for domain in tld_domains:
         active_until_date = active_until_date.date()
         days_to_expiry = (active_until_date - today).days
         
-        if days_to_expiry <= 365:
+        if days_to_expiry <= int(config['DOMAINS']['reminder_day']):
             expiring_domains.append((domain_name, active_until_date, days_to_expiry))
 
 # Send notification to Telegram if any domain is expiring
@@ -53,7 +52,9 @@ if expiring_domains:
         message += f'{domain[0]} - Active until: {domain[1].strftime("%Y-%m-%d")} ({domain[2]} days left)\n'
     
     print(message)
+    
     url = f'https://api.telegram.org/bot{telegram_token}/sendMessage'
     data = {'chat_id': telegram_chat_id, 'text': message}
-    #requests.post(url, data=data)
+    
+    requests.post(url, data=data)
     

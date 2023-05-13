@@ -4,3 +4,6 @@ chat_id = <your Telegram chat ID>
 
 [DOMAINS]
 tld_domains = example.com, anotherdomain.net, ...
+reminder_day = 365
+
+# use with no ""
