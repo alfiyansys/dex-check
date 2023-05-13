@@ -1,0 +1,6 @@
+[TELEGRAM]
+token = <your Telegram bot API token>
+chat_id = <your Telegram chat ID>
+
+[DOMAINS]
+tld_domains = example.com, anotherdomain.net, ...
