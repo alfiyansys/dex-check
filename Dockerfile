@@ -1,5 +1,5 @@
 # Use an official Python runtime as the base image
-FROM python:3.10-bullseye
+FROM python:3.10-alpine
 
 # Set the working directory inside the container
 WORKDIR /
