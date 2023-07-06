@@ -1,11 +1,13 @@
 import configparser
-from typing import List, NamedTuple
+from typing import List
+from dataclasses import dataclass
 
 from dexec.notifications import NotificationProviderInterface
 from dexec.providers import TelegramNotificationProvider, ConsoleNotificationProvider
 
 
-class Config(NamedTuple):
+@dataclass
+class Config:
     domain_list: List
     notification_provider: NotificationProviderInterface
     reminder_days_threshold: int
