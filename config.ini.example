@@ -1,9 +1,14 @@
-[TELEGRAM]
-token = <your Telegram bot API token>
-chat_id = <your Telegram chat ID>
+[APP]
+;available options: console, telegram
+;console is example only
+notification_provider = console
 
 [DOMAINS]
 tld_domains = example.com, anotherdomain.net, ...
 reminder_day = 365
+
+[TELEGRAM]
+token = <your Telegram bot API token>
+chat_id = <your Telegram chat ID>
 
 # use with no ""
