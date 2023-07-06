@@ -1,4 +1,4 @@
-# DEX Check (Domain Expiration Checker)
+# Domain Expiration Checker
 
 This project is a simple script written in Python that checks the expiration status of domain names. It utilizes the `whois` library to retrieve domain information and sends notifications to a Telegram chat if any domain is expiring soon.
 
@@ -7,6 +7,7 @@ This project is a simple script written in Python that checks the expiration sta
 - Python 3.x
 - `whois` library
 - `requests` library
+- Docker (optional)
 
 ## Installation
 
@@ -23,7 +24,7 @@ This project is a simple script written in Python that checks the expiration sta
     ```
 
 3. Set up a virtual environment (optional but recommended):
-
+    
     ```shell
     python -m venv .venv
     ```
@@ -34,7 +35,7 @@ This project is a simple script written in Python that checks the expiration sta
     ```shell
     .venv\Scripts\activate
     ```
-
+    
     On macOS/Linux:
     ```shell
     source .venv/bin/activate
@@ -55,13 +56,31 @@ Before running the script, make sure to configure the `config.ini` file with you
 
 ## Usage
 
-To run the script, execute the following command:
+To run the script locally:
 
 ```shell
 python main.py
 ```
 
 The script will check the expiration status of the specified domains and send a notification to the configured Telegram chat if any domain is expiring within the specified threshold.
+
+## Docker Support
+
+Alternatively, you can run the Domain Expiration Checker using Docker. Docker provides an isolated environment, ensuring consistent execution across different systems.
+
+1. Build the Docker image:
+
+    ```shell
+    docker build -t dex-check .
+    ```
+
+2. Run the Docker container:
+
+    ```shell
+    docker run -it --rm dex-check
+    ```
+
+The container will execute the script and display the output.
 
 ## License
 
