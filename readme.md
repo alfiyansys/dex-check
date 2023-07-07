@@ -77,7 +77,7 @@ Alternatively, you can run the Domain Expiration Checker using Docker. Docker pr
 2. Run the Docker container:
 
     ```shell
-    docker run -it --rm dex-check
+    docker run -it --rm -v /path/to/config.ini:/app/config.ini dex-check
     ```
 
 The container will execute the script and display the output.

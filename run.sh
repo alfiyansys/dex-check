@@ -2,8 +2,8 @@
 
 cur_path=$(dirname "$(realpath "$0")")
 
-cd $cur_path
+cd "$cur_path" || exit
 
-source $cur_path/.venv/bin/activate
+source "$cur_path/.venv/bin/activate"
 
-$cur_path/.venv/bin/python $cur_path/main.py
+"$cur_path/.venv/bin/python" "$cur_path/main.py"
